@@ -1,0 +1,29 @@
+.ItemDetailContainer {
+    display: flex;
+    min-width: 1000px;
+}
+header > img {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 25rem!important;
+    height: 50%;
+    border-radius: 1rem;
+    border: 3px solid rgb(122, 122, 122)
+}
+
+.DescriptionDetail {
+    display: fixed;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+} 
+
+footer {
+    margin-top: 3rem;
+}
+
+

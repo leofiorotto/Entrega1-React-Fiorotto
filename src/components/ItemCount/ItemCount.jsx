@@ -1,36 +1,33 @@
-import React from 'react'
-import { useState } from 'react'
-
-const ItemCount = ({stock, initial, onAdd}) => {
-
-    const [quantity, setQuantity] = useState(initial)
-
-    const increment = () => {
-        if (quantity < stock) {
-            setQuantity (quantity + 1)
-        }
+import { React, useState } from 'react'
+ 
+export default function App() {
+  const [counter, setCounter] = useState(0);
+ 
+  //increase counter
+  const increase = () => {
+    setCounter(count => count + 1);
+  };
+ 
+  //decrease counter
+  const decrease = () => {
+    if (counter > 1) {
+        setCounter(count => count - 1);
     }
-
-    const decrement = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1)
-        }
-    }
-
+  };
+ 
+//   //reset counter 
+//   const reset = () =>{
+//     setCounter(0)
+//   }
+ 
   return (
-    <div className='counter'>
-        <div className='controls'>
-            <button onClick={decrement}>-</button>
-            <h4>{quantity}</h4>
-            <button onClick={increment}>+</button>
-        </div>
-        <div>
-            <button onClick={() => onAdd(quantity)} disabled={!stock}>
-                Agregar al carrito
-            </button>
-        </div>
+    <div >
+      <div>
+        <button onClick={increase}>+</button>
+        <span >{counter}</span>
+        <button onClick={decrease}>-</button>
+        <button>Agregar</button>
+      </div>
     </div>
-  )
+  );
 }
-
-export default ItemCount

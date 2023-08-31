@@ -1,9 +1,10 @@
 import React from 'react'
 import "./Item.css"
 import CartWidget from '../CartWidget/CartWidget';
+import { Link, useNavigate } from "react-router-dom"
 
-const Item = ({ id, name, img, price }) => {
-    console.log("Props received in Item:", { id, name, img, price });
+
+const Item = ({ id, name, img, price, category }) => {
   return (
     <article className="Item">
         <header>
@@ -15,12 +16,15 @@ const Item = ({ id, name, img, price }) => {
         </picture>
 
         <section>
+          <p>Categoria: {category}</p>
+        </section>
+
+        <section>
           <p>Precio: {price} ETH</p>
         </section>
 
         <footer className='Item-footer'>
-          <button>Ver</button>
-          <button> <CartWidget /></button>
+        <Link to={`/Entrega1-React-Fiorotto/detail/${id}`} >VER</Link>
         </footer>
         
       </article>
