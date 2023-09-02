@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
     }
 
     return (
-        <main>
+        <main className='detailContainer'>
             <ItemDetail {...product}/>
         </main>
     )

@@ -1,7 +1,7 @@
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
-const ItemDetail = ({ id, name, category, img, price, stock, description}) => {
+const ItemDetail = ({ id, name, category, img, price, stock, description, ca, scanCollection, NFTcollection}) => {
     
     const handleOnAdd = (count) => {
         const objProductToAdd = {
@@ -12,7 +12,7 @@ const ItemDetail = ({ id, name, category, img, price, stock, description}) => {
     return (
         <article className='ItemDetailContainer'>
             <header>
-                <img src={img} alt={name} style={{ width: 100}}/>
+                <img src={img} alt={name}/>
             </header>
             <div className='DescriptionDetail'>
                 <picture>
@@ -20,7 +20,10 @@ const ItemDetail = ({ id, name, category, img, price, stock, description}) => {
                 </picture>
 
                 <section>
-                    <b>Precio: {price} ETH</b>
+                    <b className='price'>Precio: {price} ETH</b><br />
+                    <b>Contract Address: {ca}</b><br />
+                    <a href={scanCollection}>Contract DeGods</a><br />
+                    <a href={NFTcollection}>Ver historial e información de {name}</a><br />
                 </section> 
 
                 <footer>

@@ -7,6 +7,7 @@
   }
   
   .Item img {
+    width: 256px;
     max-width: 100%;
     height: auto;
   }
